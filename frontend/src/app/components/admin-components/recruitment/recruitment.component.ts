@@ -98,7 +98,7 @@ name:String;
       name: this.name,
     };
     this.http
-      .post("http://localhost:8080/hr/posted_jobR", req)
+      .post("/hr/posted_jobR", req)
       .subscribe(postData => {
         this.searchResault = postData;
         // console.log(this.searchResault[0]);
@@ -112,7 +112,7 @@ name:String;
       candidate_num: j.candidate_id
     };
     this.http
-      .post("http://localhost:8080/jobappform/application_check", req)
+      .post("/jobappform/application_check", req)
       .subscribe(postData => {
         this.applicationResult = postData;
         // console.log("post data: ", postData);
@@ -152,6 +152,8 @@ name:String;
         }
       });
     }
-   
+    emailSupport(){
+      location.href = "mailto:email?subject='job opportunity'";
+   }
     }
   

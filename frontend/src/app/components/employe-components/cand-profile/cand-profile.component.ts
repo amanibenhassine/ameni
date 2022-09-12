@@ -59,7 +59,7 @@ export class CandProfileComponent implements OnInit {
     }
     this.http
       .post<{ message: string; account: Account}>(
-        "http://localhost:8080/cand-profile/get-profile" , req)
+        "/cand-profile/get-profile" , req)
       .subscribe(AccountData => {
         // console.log("Candidate info", AccountData);
         this.firstName = AccountData["fname"];
@@ -97,7 +97,7 @@ export class CandProfileComponent implements OnInit {
       userInfo: this.can_id
     }
     this.http
-      .post("http://localhost:8080/images/load-pic", req)
+      .post("/images/load-pic", req)
       .subscribe(data => {
         var base64Flag = 'data:image/jpeg;base64,';
         // var imageStr = this.arrayBufferToBase64(data["img"].data.data);

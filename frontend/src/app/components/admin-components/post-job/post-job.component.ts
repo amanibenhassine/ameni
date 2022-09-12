@@ -151,7 +151,7 @@ export class PostJobComponent {
     };
     console.log(req);
     this.http
-      .post("http://localhost:8080/hr/create_job", req)
+      .post("/hr/create_job", req)
       .subscribe(response => {
         console.log("job post successed: ", response);
       });

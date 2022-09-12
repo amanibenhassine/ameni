@@ -66,7 +66,7 @@ export class ListEmployesComponent implements OnInit {
       hr_id: this.hrId,
     };
     this.http
-      .post("http://localhost:8080/hr/rec_list", req)
+      .post("/hr/rec_list", req)
       .subscribe(postData => {
         this.appResult = postData;
         // console.log(this.searchResault[0]);
@@ -79,7 +79,7 @@ export class ListEmployesComponent implements OnInit {
     }
     // console.log(req);
     this.http
-      .post("http://localhost:8080/hr/delete_recruiter", req)
+      .post("/hr/delete_recruiter", req)
       .subscribe(response => {
         console.log("Recruiter delete successed: ", response);
       });
@@ -125,7 +125,7 @@ export class ListEmployesComponent implements OnInit {
      
     };
     this.http
-      .post("http://localhost:8080/hr/update_recruiter", req)
+      .post("/hr/update_recruiter", req)
       .subscribe(response => {
         console.log("rec update successed: ", response);
       });

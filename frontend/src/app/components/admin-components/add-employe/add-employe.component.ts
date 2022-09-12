@@ -59,7 +59,7 @@ submit(){
   };
   console.log(req);
   this.http
-    .post("http://localhost:8080/hr/create_recruiter", req)
+    .post("/hr/create_recruiter", req)
     .subscribe(response => {
       console.log("recruiter post successed: ", response);
     });

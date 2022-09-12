@@ -50,7 +50,7 @@ export class HrProfileComponent implements OnInit {
     }
     this.http
       .post<{ message: string; account: Account }>(
-        "http://localhost:8080/hr/get-profile", req)
+        "/hr/get-profile", req)
       .subscribe(AccountData => {
         this.firstName = AccountData["firstName"];
         this.lastName = AccountData["lastName"];
@@ -70,7 +70,7 @@ export class HrProfileComponent implements OnInit {
     }
     this.http
       .post<{ message: string; account: Account }>(
-        "http://localhost:8080/images/get-pic", req)
+        "/images/get-pic", req)
       .subscribe(AccountData => {
         this.filePath = AccountData["img"];
         console.log(" proflile path is : " + this.filePath);
@@ -95,7 +95,7 @@ export class HrProfileComponent implements OnInit {
       userInfo: this.hr_id
     }
     this.http
-      .post("http://localhost:8080/images/load-pic", req)
+      .post("/images/load-pic", req)
       .subscribe(data => {
         var base64Flag = 'data:image/jpeg;base64,';
         var imageStr = this.arrayBufferToBase64(data["img"].data.data);

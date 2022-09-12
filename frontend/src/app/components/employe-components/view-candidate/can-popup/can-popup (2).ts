@@ -71,7 +71,7 @@ onNoClick(): void {
   }
   console.log("status choice: " , req);
   this.http
-    .post("http://localhost:8080/jobappform/set_status", req)
+    .post("/jobappform/set_status", req)
     .subscribe(postData => {
       // console.log("after set up " , postData);
     });

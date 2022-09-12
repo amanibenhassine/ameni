@@ -54,7 +54,7 @@ export class MyfavjobPopupComponent implements OnInit {
     job_id: this.data.job_id,
     }
   this.http
-    .post("http://localhost:8080/jobappform/apply/fav_jobinfo", req)
+    .post("/jobappform/apply/fav_jobinfo", req)
     .subscribe(postData => {
       this.jobInfo = postData;
       this.title = this.jobInfo.title;

@@ -23,7 +23,7 @@ export class PieComponent implements OnInit {
        
       },
       title: {
-        text: "Number of Candidates  by gender"
+        text: "Number of Candidates  per years"
       },
       tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -46,21 +46,7 @@ export class PieComponent implements OnInit {
       credits: {
         enabled: false
       },
-      series: [{
-        type: 'pie',
-        name: '%',
-         data: [
-            ['Women',   45.0],
-           
-            {
-               name: 'Man',
-               y: 55.0,
-               sliced: true,
-               selected: true
-            }
-            
-         ]
-      }]
+     
     };
 
     HC_exporting(Highcharts);

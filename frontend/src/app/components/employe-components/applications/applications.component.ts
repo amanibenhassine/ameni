@@ -61,7 +61,7 @@ export class ApplicationsComponent implements OnInit {
       candidate_id: this.userId,
     };
     this.http
-      .post("http://localhost:8080/jobappform/app-job-history", req)
+      .post("/jobappform/app-job-history", req)
       .subscribe(postData => {
         this.appResult = postData;
         console.log("result is: ", this.appResult);

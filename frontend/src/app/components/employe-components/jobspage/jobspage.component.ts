@@ -122,7 +122,7 @@ export class JobspageComponent implements OnInit {
     };
     console.log("front end :" , req);
     this.http
-      .post("http://localhost:8080/searchjob", req)
+      .post("/searchjob", req)
       .subscribe(postData => {
         this.job = postData;
         console.log(this.job);

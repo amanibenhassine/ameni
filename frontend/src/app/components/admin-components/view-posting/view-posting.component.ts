@@ -69,7 +69,7 @@ export class ViewPostingComponent implements OnInit{
       hr_id: this.hrId,
     };
     this.http
-      .post("http://localhost:8080/hr/posted_job", req)
+      .post("/hr/posted_job", req)
       .subscribe(postData => {
         this.searchResault = postData;
         this.count = this.searchResault.length;
@@ -84,7 +84,7 @@ export class ViewPostingComponent implements OnInit{
     }
     // console.log(req);
     this.http
-      .post("http://localhost:8080/hr/delete_job", req)
+      .post("/hr/delete_job", req)
       .subscribe(response => {
         console.log("job delete successed: ", response);
       });
@@ -133,7 +133,7 @@ export class ViewPostingComponent implements OnInit{
       candidate: this.searchResault.candidate,
     };
     this.http
-      .post("http://localhost:8080/hr/update_job", req)
+      .post("/hr/update_job", req)
       .subscribe(response => {
         console.log("job update successed: ", response);
       });

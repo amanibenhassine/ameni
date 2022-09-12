@@ -60,7 +60,7 @@ export class MyfavjobComponent implements OnInit {
       can: this.userId,
     };
     this.http
-      .post("http://localhost:8080/jobappform/apply/fav_job", req)
+      .post("/jobappform/apply/fav_job", req)
       .subscribe(postData => {
         this.searchResault = postData;
       
@@ -109,7 +109,7 @@ export class MyfavjobComponent implements OnInit {
     }
 
     this.http
-      .post("http://localhost:8080/jobappform/delete_favjob", req)
+      .post("/jobappform/delete_favjob", req)
       .subscribe(postData => {
         // this.searchResault = postData;
         // console.log(this.id_array);

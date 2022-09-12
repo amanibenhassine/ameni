@@ -17,6 +17,7 @@ var Job = new mongoose.Schema({
         rank: Number,
         applyDate: Date,
         status: String,
+        email:String,
     }]
     // updated_date: { type: Date, default: Date.now },
 });

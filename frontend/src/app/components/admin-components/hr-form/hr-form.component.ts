@@ -64,7 +64,7 @@ export class HrFormComponent implements OnInit {
     }
     this.http
       .post<{ message: string; account: Account }>(
-        "http://localhost:8080/hr/get-profile" , req)
+        "/hr/get-profile" , req)
       .subscribe(AccountData => {
         this.firstName = AccountData["firstName"];
         this.lastName = AccountData["lastName"];
@@ -91,7 +91,7 @@ export class HrFormComponent implements OnInit {
       };
 
       this.http
-        .put("http://localhost:8080/hr/update/", req)
+        .put("/hr/update/", req)
         .subscribe(response => {
           console.log("res is :", response);
         });
@@ -124,7 +124,7 @@ export class HrFormComponent implements OnInit {
     
     // console.log(fd);
     this.http
-      .post("http://localhost:8080/images/update-pic" ,fd)
+      .post("/images/update-pic" ,fd)
       .subscribe(response => {
         console.log("res is :", response);
       });
@@ -144,7 +144,7 @@ export class HrFormComponent implements OnInit {
       userInfo: this.hr_id
     }
     this.http
-      .post("http://localhost:8080/images/load-pic", req)
+      .post("/images/load-pic", req)
       .subscribe(data => {
         var base64Flag = 'data:image/jpeg;base64,';
         var imageStr = this.arrayBufferToBase64(data["img"].data.data);

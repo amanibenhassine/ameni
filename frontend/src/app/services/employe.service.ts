@@ -23,31 +23,31 @@ export class EmployeService {
 
   public getEmploye(id: any){
     console.log("this is id ="+ id)
-    return this.httpClient.get<any>("http://localhost:8080/user/"+ id);
+    return this.httpClient.get<any>("/user/"+ id);
   }
 
   public archiveEmploye(id: any){
-    return this.httpClient.get<any>("http://localhost:8080/archiveEmploye/"+ id);
+    return this.httpClient.get<any>("/archiveEmploye/"+ id);
   }
 
   public getActiveEmployees(){
-    return this.httpClient.get<any>("http://localhost:8080/activeEmployees");
+    return this.httpClient.get<any>("/activeEmployees");
   }
 
   public getArchivedEmployees(){
-    return this.httpClient.get<any>("http://localhost:8080/archivedEmployees");
+    return this.httpClient.get<any>("/archivedEmployees");
   }
 
   public generateReport(id: number){
-    return this.httpClient.get<any>("http://localhost:8080/report/pdf"+"/"+ id);
+    return this.httpClient.get<any>("/report/pdf"+"/"+ id);
   }
 
   public deleteEmployeById (id: number)  {
-    return this.httpClient.delete("http://localhost:8080/users"+"/" + id);
+    return this.httpClient.delete("/users"+"/" + id);
   }
 
   public editUser (employe:Employe)  {
-    return this.httpClient.put("http://localhost:8080/updateUser",employe);
+    return this.httpClient.put("/updateUser",employe);
   }
 
   public editPhoto (fileImage:File,id:number)  {
@@ -55,14 +55,14 @@ export class EmployeService {
     const data:FormData= new FormData();
     data.append('id',JSON.stringify(id));
     data.append('image',fileImage);
-    return this.httpClient.put("http://localhost:8080/photo?id="+id,fileImage);
+    return this.httpClient.put("/photo?id="+id,fileImage);
   }
 
   public updateEmployee(employe:Employe, fileImage:File) {
     const data:FormData= new FormData();
     data.append('user',JSON.stringify(employe));
     data.append('image',fileImage);
-    return this.httpClient.put("http://localhost:8080/user",data);
+    return this.httpClient.put("/user",data);
   }
 
   public createEmploye(employe, fileImage:File) {
@@ -71,7 +71,7 @@ export class EmployeService {
     data.append('user',JSON.stringify(employe));
     data.append('image',fileImage);
     
-    return this.httpClient.post<Employe>("http://localhost:8080/createEmploye", data);
+    return this.httpClient.post<Employe>("/createEmploye", data);
   }
 
   setter(employe:Employe){

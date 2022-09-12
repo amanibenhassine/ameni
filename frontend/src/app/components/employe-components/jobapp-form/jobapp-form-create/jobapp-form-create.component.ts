@@ -337,7 +337,7 @@ export class JobappFormCreateComponent implements OnInit {
       disability: jobapp.disability
     }
     this.http
-      .post("http://localhost:8080/jobappform/apply/application", req1)
+      .post("/jobappform/apply/application", req1)
       .subscribe(response => {
         console.log("res is :", response);
       });
@@ -360,7 +360,7 @@ export class JobappFormCreateComponent implements OnInit {
     }; 
     // console.log(reqs);
      this.http
-       .post("http://localhost:8080/jobappform/applied_job", reqs)
+       .post("/jobappform/applied_job", reqs)
        .subscribe(response => {
          console.log("res is :", response);
        });
@@ -379,7 +379,7 @@ export class JobappFormCreateComponent implements OnInit {
     const req = { job_id: this.job_id, candidate: can };
     console.log("req is:" , req);
     this.http
-      .post("http://localhost:8080/jobappform/job", req)
+      .post("/jobappform/job", req)
       .subscribe(response => {
         console.log("res is :", response);
       });

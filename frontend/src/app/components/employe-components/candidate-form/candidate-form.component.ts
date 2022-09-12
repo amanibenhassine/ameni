@@ -31,19 +31,11 @@ export interface Education {
 export class CandidateFormComponent implements OnInit {
 
   Educations: Education[] = [
-    { value: 'Some College-0', viewValue: 'Some College' },
-    { value: 'Juris Doctor-1', viewValue: 'Juris Doctor' },
-    { value: 'Professional Designation', viewValue: 'Professional Designation' },
-    { value: 'Other', viewValue: 'Other' },
-    { value: 'Masters', viewValue: 'Masters' },
-    { value: 'Honours Bachelors', viewValue: 'Honours Bachelors' },
-    { value: 'High School Diploma', viewValue: 'High School Diploma' },
-    { value: 'GED', viewValue: 'GED' },
-    { value: 'Doctorate', viewValue: 'Doctorate' },
-    { value: 'Diploma', viewValue: 'Diploma' },
-    { value: 'Certificate', viewValue: 'Certificate' },
-    { value: 'Bachelors', viewValue: 'Bachelors' },
-    { value: 'Associates', viewValue: 'Associates' }
+    { value: 'Bac', viewValue: 'Bac' },
+    { value: 'Licence', viewValue: 'Licence' },
+    { value: 'Mastére', viewValue: 'Mastére' },
+    { value: 'Doctorat', viewValue: 'Doctorat' },
+
   ];
 
 
@@ -203,7 +195,7 @@ export class CandidateFormComponent implements OnInit {
     console.log("input candidate info: " + candidate);
 
     this.http
-      .post("http://localhost:8080/cand-profile/update", candidate)
+      .post("/cand-profile/update", candidate)
       .subscribe(response => {
         console.log("res is :", response);
       });
@@ -228,7 +220,7 @@ export class CandidateFormComponent implements OnInit {
     }
     this.http
       .post<{ message: string; account: Account }>(
-        "http://localhost:8080/cand-profile/get-profile", req)
+        "/cand-profile/get-profile", req)
       .subscribe(AccountData => {
         // console.log("Candidate info", AccountData);
         this.enteredFirstName = AccountData["fname"];
@@ -267,7 +259,7 @@ export class CandidateFormComponent implements OnInit {
 
     // console.log(fd);
     this.http
-      .post("http://localhost:8080/images/update-pic", fd)
+      .post("/images/update-pic", fd)
       .subscribe(response => {
         console.log("res is :", response);
       });
@@ -286,7 +278,7 @@ export class CandidateFormComponent implements OnInit {
       userInfo: this.can_id
     }
     this.http
-      .post("http://localhost:8080/images/load-pic", req)
+      .post("/images/load-pic", req)
       .subscribe(data => {
         var base64Flag = 'data:image/jpeg;base64,';
         var imageStr = this.arrayBufferToBase64(data["img"].data.data);

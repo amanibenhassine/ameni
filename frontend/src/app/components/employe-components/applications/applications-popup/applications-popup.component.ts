@@ -70,7 +70,7 @@ export class ApplicationsPopupComponent implements OnInit {
     candidate_id: this.userId
     }
   this.http
-    .post("http://localhost:8080/jobappform/apply/applied_jobinfo", req)
+    .post("/jobappform/apply/applied_jobinfo", req)
     .subscribe(postData => {
       this.jobInfo = postData;
       for (var i = 0; i < this.jobInfo.candidate.length; i++){

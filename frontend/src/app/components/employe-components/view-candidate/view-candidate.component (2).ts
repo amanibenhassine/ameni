@@ -75,7 +75,7 @@ export class ViewCandidateComponent {
       hr_id: this.hrId,
     };
     this.http
-      .post("http://localhost:8080/hr/posted_job", req)
+      .post("/hr/posted_job", req)
       .subscribe(postData => {
         this.searchResault = postData;
         // console.log(this.searchResault[0]);
@@ -90,7 +90,7 @@ export class ViewCandidateComponent {
       candidate_num: j.candidate_id
     };
     this.http
-      .post("http://localhost:8080/jobappform/application_check", req)
+      .post("/jobappform/application_check", req)
       .subscribe(postData => {
         this.applicationResult = postData;
         // console.log("post data: ", postData);

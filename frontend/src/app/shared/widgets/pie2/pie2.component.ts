@@ -24,7 +24,7 @@ export class Pie2Component implements OnInit {
          
         },
         title: {
-          text: "Number of employees by Contract type"
+          text: "Number of employees per years"
         },
         tooltip: {
           pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -47,21 +47,7 @@ export class Pie2Component implements OnInit {
         credits: {
           enabled: false
         },
-        series: [{
-          type: 'pie',
-          name: '%',
-           data: [
-              ['CDD',   10.0],
-             
-              {
-                 name: 'CDI',
-                 y: 90.0,
-                 sliced: true,
-                 selected: true
-              }
-              
-           ]
-        }]
+        
       };
   
       HC_exporting(Highcharts);

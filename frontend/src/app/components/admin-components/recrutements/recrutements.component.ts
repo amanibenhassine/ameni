@@ -90,7 +90,7 @@ export class RecrutementsComponent implements OnInit {
       name: this.name,
     };
     this.http
-      .post("http://localhost:8080/hr/posted_jobR", req)
+      .post("/hr/posted_jobR", req)
       .subscribe(postData => {
         this.searchResault = postData;
         // console.log(this.searchResault[0]);
@@ -104,7 +104,7 @@ export class RecrutementsComponent implements OnInit {
       candidate_num: j.candidate_id
     };
     this.http
-      .post("http://localhost:8080/jobappform/application_check", req)
+      .post("/jobappform/application_check", req)
       .subscribe(postData => {
         this.applicationResult = postData;
         // console.log("post data: ", postData);

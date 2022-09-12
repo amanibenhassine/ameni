@@ -86,7 +86,7 @@ export class JobspagePopupComponent implements OnInit {
       }; 
 
       this.http
-        .post("http://localhost:8080/jobappform/fav_job", reqs)
+        .post("/jobappform/fav_job", reqs)
         .subscribe(response => {
           console.log("res is :", response);
         });
@@ -101,7 +101,7 @@ export class JobspagePopupComponent implements OnInit {
         }
 
         this.http
-          .post("http://localhost:8080/jobappform/delete_favjob", req)
+          .post("/jobappform/delete_favjob", req)
           .subscribe(postData => {
             // console.log("delete one saved job");
           });

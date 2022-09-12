@@ -84,7 +84,7 @@ export class SidebarComponent implements OnInit {
       userInfo: this.id
     }
     this.http
-      .post("http://localhost:8080/images/load-pic", req)
+      .post("/images/load-pic", req)
       .subscribe(data => {
         var base64Flag = 'data:image/jpeg;base64,';
         // var imageStr = this.arrayBufferToBase64(data["img"].data.data);
